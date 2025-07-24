@@ -6,7 +6,7 @@ import UserRoutee from "./Routes/UserRoute.js";
 const app = express();
 app.use(express.json());
 app.use(cors({
-  origin: ['http://localhost:5173', 'https://teal-bublanina-36d41f.netlify.app'],
+  origin: ['https://teal-bublanina-36d41f.netlify.app'],
   credentials: true,
 }));
 dbConnection();
