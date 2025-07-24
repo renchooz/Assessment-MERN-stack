@@ -17,8 +17,19 @@ export const setUser = async (req, res) => {
       website,
     });
     await setUser.save();
-    return res.json({ status: true, message: "created sucessfully" });
+    return res.json({ status: true, message: "created sucessfully",setUser });
   } catch (error) {
     return res.json({ status: false, message: error.message });
   }
 };
+export const getUser = async(req,res)=>{
+    try {
+        const User = await UserModel.find({})
+        if(!User){
+            return res.json({ status: false, message: "user not found" });
+        }
+        return res.json({status:true,User})
+    } catch (error) {
+        
+    }
+}
