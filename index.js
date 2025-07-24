@@ -6,11 +6,11 @@ import UserRoutee from "./Routes/UserRoute.js";
 const app = express();
 app.use(express.json());
 app.use(cors({
-    origin:['http://localhost:5173','https://teal-bublanina-36d41f.netlify.app/'],
-    credentials:true
-}))
+  origin: ['http://localhost:5173', 'https://teal-bublanina-36d41f.netlify.app'],
+  credentials: true,
+}));
 dbConnection();
 app.use("/api/user",UserRoutee)
-app.listen(5001, () => {
+app.listen(4000, () => {
   console.log("server is running");
 });
